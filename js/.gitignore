@@ -1,0 +1,12 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Entornos de desarrollo
+node_modules/
+.vscode/
+*.log
+
+# Archivos de usuario
+*.tmp
+*.temp

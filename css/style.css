@@ -1,0 +1,89 @@
+:root {
+  --bg-dark: #121218;
+  --bg-panel: #1e1e26;
+  --accent: #00d4ff;
+  --text: #e0e0e8;
+  --text-muted: #888899;
+  --border: #333344;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text);
+  line-height: 1.5;
+}
+header {
+  background: linear-gradient(90deg, #0f0f15, #1a1a25);
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--accent);
+  text-align: center;
+}
+header h1 { color: var(--accent); font-size: 2rem; }
+header p { color: var(--text-muted); font-size: 0.9rem; }
+.container {
+  display: grid;
+  grid-template-columns: 280px 1fr 320px;
+  gap: 1rem;
+  padding: 1rem;
+  height: calc(100vh - 80px);
+}
+.sidebar, .details-panel {
+  background: var(--bg-panel);
+  border-radius: 12px;
+  padding: 1rem;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+}
+.sidebar h2, .details-panel h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+#component-list { list-style: none; }
+#component-list li {
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.4rem;
+  background: #252530;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+#component-list li:hover, #component-list li.active {
+  background: #2a2a3a;
+  border-left-color: var(--accent);
+  transform: translateX(4px);
+}
+.viewer-area {
+  display: flex;
+  flex-direction: column;
+  background: #15151e;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+#canvas-container { flex: 1; min-height: 0; }
+#canvas-container canvas { display: block; width: 100% !important; height: 100% !important; }
+.controls {
+  display: flex; gap: 0.5rem; padding: 0.8rem;
+  background: var(--bg-panel); border-top: 1px solid var(--border);
+}
+.controls button {
+  flex: 1; padding: 0.6rem; background: #2d2d3b; color: var(--text);
+  border: 1px solid var(--border); border-radius: 6px; cursor: pointer;
+  transition: background 0.2s;
+}
+.controls button:hover { background: #3a3a4d; }
+.controls button:active { transform: scale(0.98); }
+.details-panel h2 { margin-bottom: 0.5rem; }
+.spec-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 1rem;
+}
+.spec-item { background: #252530; padding: 0.6rem; border-radius: 6px; }
+.spec-label { color: var(--text-muted); font-size: 0.8rem; }
+.spec-value { font-weight: 500; }
+@media (max-width: 900px) {
+  .container { grid-template-columns: 1fr; height: auto; }
+  .sidebar, .details-panel { height: auto; max-height: 300px; }
+}
