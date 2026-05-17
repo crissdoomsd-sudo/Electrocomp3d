@@ -169,7 +169,7 @@ export const componentes = [
   },
   {
     id: 'ram',
-    nombre: 'Memoria RAM (SRAM/DRAM)',
+    nombre: 'Memoria RAM (SRAMDRAM)',
     categoria: 'CI Mixtos',
     descripcion: 'Almacenamiento volátil de datos. SRAM es rápida y cara; DRAM es densa y requiere refresco.',
     specs: { 'Tipo': 'Volátil', 'Acceso': 'Aleatorio', 'Velocidad': 'ns (SRAM) / µs (DRAM)', 'Uso': 'Memoria de trabajo' },
